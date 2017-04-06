@@ -4,36 +4,36 @@ import java.util.HashMap;
 
 public class Deck {
 
-	private HashMap<Cards, Integer> cardsNumber = new HashMap<>();
-	private Cards[] deckOfCards;
+	private HashMap<Card, Integer> cardsNumber = new HashMap<>();
+	private Card[] deckOfCards;
 
 	public Deck() {
 
 	}
 
 	public void fillDeck() {
-		deckOfCards = Cards.values();
-		for (Cards x : deckOfCards) {
+		deckOfCards = Card.values();
+		for (Card x : deckOfCards) {
 			cardsNumber.put(x, 4);
 		}
 	}
 
-	public HashMap<Cards, Integer> getDeck() {
+	public HashMap<Card, Integer> getDeck() {
 		return cardsNumber;
 	}
 
-	public void removeCard(Cards card) {
+	public void removeCard(Card card) {
 		if (cardsNumber.get(card) == 1) {
 			cardsNumber.remove(card);
 		} else
 			cardsNumber.replace(card, cardsNumber.get(card) - 1);
 	}
 
-	public Cards[] getCards() {
+	public Card[] getCards() {
 		return deckOfCards;
 	}
 
-	public Cards getCard(int number) {
+	public Card getCard(int number) {
 		return deckOfCards[number];
 	}
 
